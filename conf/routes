@@ -1,0 +1,12 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET        /                                      controllers.RootController.index()
+GET        /langs/fetchAll                        controllers.LangController.fetchAll
+GET        /questions/fetchAll/:drop/:take        controllers.QuestionController.fetchAllDropTake(drop: Int, take: Int)
+POST       /questions/fetchAll                    controllers.QuestionController.fetchAll
+
+
+# Serve static assets under public directory
+GET        /*file                        controllers.AssetController.assetOrDefault(file)
